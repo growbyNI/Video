@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <title>Video with VAST Ad</title>
-  <link href="https://vjs.zencdn.net/7.21.0/video-js.css" rel="stylesheet" />
-  <script src="https://vjs.zencdn.net/7.21.0/video.min.js"></script>
+<link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/videojs-contrib-ads@6.8.0/dist/videojs.ads.min.js"></script>
+<script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/videojs-ima@1.8.0/dist/videojs.ima.min.js"></script>
 
-  <!-- Ads Plugin -->
-  <script src="https://cdn.jsdelivr.net/npm/videojs-contrib-ads@6.9.0/dist/videojs-contrib-ads.min.js"></script>
 
-  <!-- Google IMA SDK -->
-  <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/videojs-ima@1.10.0/dist/videojs.ima.min.js"></script>
+
 
   <style>
     body {
@@ -27,24 +26,17 @@
   </style>
 </head>
 <body>
+<video id="videoPlayer" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360">
+  <source src="your-content.mp4" type="video/mp4" />
+</video>
 
-  <video id="videoAdPlayer" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360" poster="">
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
-  </video>
-
-  <script>
-    var player = videojs('videoAdPlayer');
-
-    player.ima({
-      adTagUrl: "https://briefsection.com/d.mKFfzsdaG/Njv/ZXGsUC/fekmA9hueZrUClEkSPDT/Yc1/NrTdEN4tNyjrI_tZNQjbUF1_MmTygl2/Mawt",
-      debug: true
-    });
-
-    player.ready(function () {
-      player.ima.initializeAdDisplayContainer();
-      player.play();
-    });
-  </script>
+  
+<script>
+  var player = videojs('videoPlayer');
+  player.ima({
+    adTagUrl: "https://briefsection.com/d/mbF_z.dRGqNUvHZ/GRUI/pedmY9qugZOUTltkPP_TwY/1BNwTTED4iN/j/I/tMNQjyU/1RMZT/gr2EM/yfZOsZavWy1apjdtDV0fxI"
+  });
+</script>
 
 </body>
 </html>
